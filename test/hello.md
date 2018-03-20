@@ -4,6 +4,8 @@
 
 ## 오늘 배울것
 - git
-- markdown
+- markdownㅂ
+변경이
 
 변경사항 저장
+ 
