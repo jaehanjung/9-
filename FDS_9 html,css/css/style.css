@@ -8,6 +8,7 @@
 *::after {
   margin: 0;
   padding: 0;
+  border: 0;
   box-sizing: border-box;
 }
 /* 블릭기호 삭제 */
@@ -42,7 +43,7 @@ body {
 /* 컨테이너 */
 .container {
   height: 100vh;
-  background-color: grey;
+  background-color: #fff;
 }
 /* 레이아웃 공통 */
 .header,
@@ -53,35 +54,75 @@ body {
 }
 /* 헤더 */
 .header {
-  background-color: yellow;
+  background-color: #fff;
+  padding: 0 0 10px 0;
+  position: relative;
 }
 /* 로고 */
 .logo {
-  background-color: blue;
-  float: left;
+  /* background-color: blue; */
   margin: 0;
-  padding: 1em;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
+
 /* 멤버 링크 */
 .member {
-  background-color: aqua;
-  float: right;
+  /* background-color: aqua; */
+  text-align: right;
+  font-size: 0;
+  position: relative;
 }
 .member li {
-  float: left;
+  display: inline;
+  font-size: 1rem;
+  /* right: 10px; */
 }
+.member a:hover,.member a:focus{
+  color: #FF005A;
+}
+/* .member li::before {
+  content: "|";
+} */
+/* .member li:first-child::before {
+  content: "";
+} */
+.member a {
+  display: inline-block;
+  padding: 10px;
+}
+
 /* 검색 폼 */
 .search {
-  clear: both;
-  float: right;
+  /* background-color: aqua; */
+  text-align: right;
+  margin-top: 15px;
 }
 .search fieldset {
   border: 0;
   padding: 0;
   margin: 0;
 }
+input[type="search"] {
+  height: 30px;
+  width: 420px;
+  padding: 1px 15px;
+  border: 1px solid #666;
+  border-radius: 5px;
+}
+.btn-search {
+  height: 30px;
+  width: 50px;
+  padding: 5px;
+  border: 1px solid #666;
+  background-color: #988574;
+  color: #fff;
+  border-radius: 5px;
+}
 /* 네비 */
 .navigation {
+  border-top: 2px solid #181818;
   background-color: lime;
   height: 10vh;
 }
