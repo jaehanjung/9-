@@ -1,0 +1,70 @@
+@charset "utf-8";
+body{
+  margin: 100px;
+}
+.box{
+  background: yellow;
+  border: 5px solid #181818;
+  width: 300px;
+  height: 300px;
+  /* text-align: center;
+  line-height: 300px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+.box:hover{
+  border-radius: 50% 0 50% 0;
+  /* 360도 돈다 */
+  /* transform: rotate(360deg); */
+  /* 왼쪽에서 오른쪽으로 이동 */
+  /* transform: translateX(50px); */
+  /* 작아지면서 로테이드 된다 확대도가능 */
+  /* transform: scale(0.7); */
+  /* 연결해서 활용할수도있다. */
+  /* transform: rotate(360deg) translateX(50px) scale(1.2); */
+}
+
+/* css3 애니메이션 규칙 */
+/* 함수 keyframes 이다  */
+@keyframes text-ani{
+  0%{
+    font-size: 20px;
+    /* 스윙하는것처럼 움직인다. */
+    transform: translate(0,0);
+  }
+  100%{
+    font-size: 40px;
+    transform: translate(500px,150px);
+  }
+}
+.text{
+  width: 800px;
+  margin: 50px auto;
+  height: 300px;
+  border: 5px solid #000;
+  background-color: pink;
+  
+}
+.inner{
+  background-color: aqua;
+  display: inline-block;
+  /* animation-name,animation-duration 는 셋트 와야한다. */
+  /* keyframes 에 정해놓은 이름을 해당 클래스의 사용 */
+  animation-name: text-ani;
+  /* 3초동안 실행 */
+  animation-duration: 3000ms;
+  /* 종료지점으로 돌아갈것이냐 */
+  animation-fill-mode: forwards;
+  /* 얼마후에 시작할거냐 */
+  animation-delay: 1s;
+  /* 멈추지않는 애니메이션 무한반복 시켜준다 */
+  animation-iteration-count: infinite;
+  /* 부드러운애니메이션 */
+  animation-direction: alternate;
+  /* 처음에느리게 중간에빠르게 */
+  animation-timing-function: ease-in-out;
+  /* 일시정지 */
+  /* animation-play-state: paused; */
+}

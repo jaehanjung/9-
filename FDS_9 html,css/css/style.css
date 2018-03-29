@@ -35,9 +35,13 @@ legend,
   display: block;
 }
 /* 기본 스타일 */
+html{
+  font-size: 10px;
+}
 body {
   background-color: #fff;
   color: #181818;
+  font-size: 1.4rem;
   font-family: "Noto Sans Regular", sans-serif;
 }
 /* 컨테이너 */
@@ -55,7 +59,7 @@ body {
 /* 헤더 */
 .header {
   background-color: #fff;
-  padding: 0 0 10px 0;
+  padding: 10px 0 10px 0;
   position: relative;
 }
 /* 로고 */
@@ -76,11 +80,12 @@ body {
 }
 .member li {
   display: inline;
-  font-size: 1rem;
+  font-size: 1.6rem;
   /* right: 10px; */
 }
-.member a:hover,.member a:focus{
-  color: #FF005A;
+.member a:hover,
+.member a:focus {
+  color: #ff005a;
 }
 /* .member li::before {
   content: "|";
@@ -123,9 +128,45 @@ input[type="search"] {
 /* 네비 */
 .navigation {
   border-top: 2px solid #181818;
-  background-color: lime;
-  height: 10vh;
+  border-bottom: 2px solid #181818;
+  background-color: #988574;
+  margin: 0 auto;
+  padding-top: 0.5em;
+  
 }
+.nav-menu{
+  width: 1000px;
+  margin: 0 auto;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.6rem;
+}
+.nav-menu span{
+  display:block;
+  cursor: pointer;
+  font-size: 1.8rem;
+  font-family: 'Noto Sans Bold', sans-serif;
+  padding: 0.5em 1em;
+  text-shadow: 1px 1px 3px #181818;
+ /* transition: all 5s ease; */
+}
+.nav-menu span:hover, .nav-menu a:hover, .nav-menu li:focus span, .nav-menu a:focus{
+  color: #FFFF00;
+}
+.sub-menu{
+  /* background-color: orangered; */
+  margin-top: 0.5em;
+}
+.sub-menu li{
+  margin: 0.5em 0 0.5em 1em;
+}
+.sub-menu a{
+  /* background-color: skyblue; */
+  display: block;
+  padding: 0.3em 0;
+}
+
 /* 메인 콘텐츠 */
 .main {
   background-color: pink;
