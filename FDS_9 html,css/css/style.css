@@ -35,7 +35,7 @@ legend,
   display: block;
 }
 /* 기본 스타일 */
-html{
+html {
   font-size: 10px;
 }
 body {
@@ -44,11 +44,38 @@ body {
   font-size: 1.4rem;
   font-family: "Noto Sans Regular", sans-serif;
 }
+
+.btn-grid {
+  position: fixed;
+  top: 2em;
+  right: 2em;
+  background: #000;
+  color: #fff;
+  padding: 1em;
+  border-radius: 5px;
+}
 /* 컨테이너 */
 .container {
-  height: 100vh;
-  background-color: #fff;
+  /* height: 100vh;   */
+  position: relative;
 }
+.is-act::before {
+  content: "";
+  position: absolute;
+  width: 1000px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    hsla(70, 90%, 60%, 0.4) 0px,
+    hsla(70, 90%, 60%, 0.4) 65px,
+    transparent 65px,
+    transparent 85px
+  );
+  z-index: 100;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 /* 레이아웃 공통 */
 .header,
 .main,
@@ -132,9 +159,8 @@ input[type="search"] {
   background-color: #988574;
   margin: 0 auto;
   padding-top: 0.5em;
-  
 }
-.nav-menu{
+.nav-menu {
   width: 1000px;
   margin: 0 auto;
   color: #fff;
@@ -142,26 +168,29 @@ input[type="search"] {
   justify-content: space-between;
   font-size: 1.6rem;
 }
-.nav-menu span{
-  display:block;
+.nav-menu span {
+  display: block;
   cursor: pointer;
   font-size: 1.8rem;
-  font-family: 'Noto Sans Bold', sans-serif;
+  font-family: "Noto Sans Bold", sans-serif;
   padding: 0.5em 1em;
   text-shadow: 1px 1px 3px #181818;
- /* transition: all 5s ease; */
+  /* transition: all 5s ease; */
 }
-.nav-menu span:hover, .nav-menu a:hover, .nav-menu li:focus span, .nav-menu a:focus{
-  color: #FFFF00;
+.nav-menu span:hover,
+.nav-menu a:hover,
+.nav-menu li:focus span,
+.nav-menu a:focus {
+  color: #ffff00;
 }
-.sub-menu{
+.sub-menu {
   /* background-color: orangered; */
   margin-top: 0.5em;
 }
-.sub-menu li{
+.sub-menu li {
   margin: 0.5em 0 0.5em 1em;
 }
-.sub-menu a{
+.sub-menu a {
   /* background-color: skyblue; */
   display: block;
   padding: 0.3em 0;
@@ -169,40 +198,98 @@ input[type="search"] {
 
 /* 메인 콘텐츠 */
 .main {
-  background-color: pink;
+  /* background-color: pink; */
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(12, 65px);
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "rb rb rb rb ns ns ns ns ns ns ns ns"
+    "bd bd bd bd tr tr tr tr tr fs fs fs";
   /* display: flex;
   flex-flow: row wrap;
   justify-content: space-between; */
 }
 
 .main section {
-  height: 30vh;
+  /* height: 30vh; */
 }
+/* 추천서적 */
 .recommend-book {
-  float: left;
-  background-color: teal;
-  width: 350px;
+  grid-area: rb;
+  /* font-size: 16px; */
+  /* background-color: teal; */
+  /* float: left; */
+  /* width: 350px; */
+}
+/* 추천서적 제목 */
+.recommend-book-heading {
+  font-size: 1.8rem;
+  background-image: url("../css/images/sprite_main.png");
+  background-repeat: no-repeat;
+  padding-left: 65px;
+  height: 60px;
+  margin: 1em;
+}
+.recommend-book-heading .en-heading {
+  display: block;
+  color: #abd375;
+  margin-top: 8px;
+}
+/* 추천서적 커버이미지 */
+.recommend-book-cover {
+  width: 15em;
+  margin: 15px auto;
+  text-align: center;
+}
+.recommend-book-cover img{
+  max-width: 100%
+}
+figcaption{
+  font-size: 16px;
+}
+/* 추천서적 저자 및 평점 */
+.recommend-book-detail{
+  text-align: center;
+}
+.recommend-book-author, .recommend-book-author-name{
+  font-size: 16px;
+  display: inline-block;
+}
+.recommend-book-grade{
+  font-size: 2rem;
+  margin: 1rem;
+  color: #abd375;
+}
+.recommend-book-summary{
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 15px 0;
 }
 .news {
-  float: left;
-  width: 650px;
+  grid-area: ns;
   background-color: tan;
+  /* float: left; */
+  /* width: 650px; */
 }
 .board {
-  float: left;
-  width: 350px;
+  grid-area: bd;
   background-color: skyblue;
+  /* float: left; */
+  /* width: 350px; */
 }
 .favorite-site {
-  /* order: 1; */
-  float: right;
-  width: 250px;
+  grid-area: fs;
   background-color: orange;
+  /* order: 1; */
+  /* float: right; */
+  /* width: 250px; */
 }
 .twitter {
-  float: left;
-  width: 400px;
+  grid-area: tr;
   background-color: blueviolet;
+  /* float: left; */
+  /* width: 400px; */
 }
 /* 슬로건 */
 .slogan {
