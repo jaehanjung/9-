@@ -210,10 +210,27 @@ input[type="search"] {
   flex-flow: row wrap;
   justify-content: space-between; */
 }
-
-.main section {
-  /* height: 30vh; */
+/* 메인콘텐츠 속성 제목 공통 */
+.main-section-heading {
+  font-size: 1.8rem;
+  background-image: url("../css/images/sprite_main.png");
+  background-repeat: no-repeat;
+  padding: 5px 0 0 65px;
+  min-height: 60px;
+  margin: 1em;
 }
+.recommend-book-heading .en-heading {
+  display: block;
+  color: #abd375;
+  margin-top: 8px;
+}
+/* 메인 콘텐츠 단락 공통 */
+.main [class$="-summary"] {
+  /* background-color: yellow; */
+  line-height: 1.5;
+  margin: 1em 0;
+}
+
 /* 추천서적 */
 .recommend-book {
   grid-area: rb;
@@ -222,74 +239,120 @@ input[type="search"] {
   /* float: left; */
   /* width: 350px; */
 }
-/* 추천서적 제목 */
-.recommend-book-heading {
-  font-size: 1.8rem;
-  background-image: url("../css/images/sprite_main.png");
-  background-repeat: no-repeat;
-  padding-left: 65px;
-  height: 60px;
-  margin: 1em;
-}
-.recommend-book-heading .en-heading {
-  display: block;
-  color: #abd375;
-  margin-top: 8px;
-}
 /* 추천서적 커버이미지 */
 .recommend-book-cover {
-  width: 15em;
-  margin: 15px auto;
+  width: 75%;
+  margin: 1em auto;
   text-align: center;
 }
-.recommend-book-cover img{
-  max-width: 100%
+.recommend-book-cover img {
+  max-width: 100%;
+  height: auto;
 }
-figcaption{
+figcaption {
   font-size: 16px;
 }
 /* 추천서적 저자 및 평점 */
-.recommend-book-detail{
+.recommend-book-detail {
   text-align: center;
 }
-.recommend-book-author, .recommend-book-author-name{
+.recommend-book-author,
+.recommend-book-author-name {
   font-size: 16px;
   display: inline-block;
 }
-.recommend-book-grade{
+.recommend-book-grade {
   font-size: 2rem;
   margin: 1rem;
   color: #abd375;
 }
-.recommend-book-summary{
+.recommend-book-summary {
   font-size: 16px;
-  line-height: 1.5;
   margin: 15px 0;
 }
+/* 새소식 */
 .news {
   grid-area: ns;
-  background-color: tan;
+  /* background-color: tan; */
   /* float: left; */
   /* width: 650px; */
 }
+.news-container {
+  margin: 1em 0;
+}
+.news-heading {
+  background-position-y: -230px;
+  margin-left: 0;
+}
+.news-heading .en-heading {
+  display: block;
+  color: #e8ca58;
+  margin-top: 8px;
+}
+.news-video {
+  max-width: 100%;
+  height: auto;
+}
+.news-summary {
+  font-size: 16px;
+}
+.news-date {
+  display: block;
+  text-align: right;
+  font-size: 16px;
+}
+
+/* 게시판 영역 */
 .board {
   grid-area: bd;
   background-color: skyblue;
   /* float: left; */
   /* width: 350px; */
 }
+.board-heading {
+  background-position-y: -115px;
+  margin-left: 0;
+}
+.board-heading .en-heading {
+  display: block;
+  color: #c7b39a;
+  margin-top: 8px;
+}
+.icon-star:before {
+  content: '\e80e';
+}
+/* 인기사이트 영역 */
 .favorite-site {
   grid-area: fs;
-  background-color: orange;
+  background-color: blue;
   /* order: 1; */
   /* float: right; */
   /* width: 250px; */
 }
+.favorite-heading {
+  background-position-y: -345px;
+  margin-left: 0;
+}
+.favorite-heading .en-heading {
+  display: block;
+  color: #eea60a;
+  margin-top: 8px;
+}
+/* 트위터 영역 */
 .twitter {
   grid-area: tr;
   background-color: blueviolet;
   /* float: left; */
   /* width: 400px; */
+}
+.twitter-heading {
+  background-position-y: -460px;
+  margin-left: 0;
+}
+.twitter-heading .en-heading {
+  display: block;
+  color: #6faee6;
+  margin-top: 8px;
 }
 /* 슬로건 */
 .slogan {
